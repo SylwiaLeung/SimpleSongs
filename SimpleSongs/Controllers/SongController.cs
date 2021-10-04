@@ -20,5 +20,22 @@ namespace SimpleSongs.Controllers
             }
             else return SongDao.Read(title);
         }
+
+        public void AddNewSong(string title, string author, string album, double length)
+        {
+            Song song = new()
+            {
+                Title = title,
+                Author = author,
+                AlbumName = album,
+                Length = length
+            };
+            SongDao.Add(song);
+        }
+
+        public void DisplaySongs()
+        {
+            OutputUtils.DisplayMany(SongDao.ReadAll());
+        }
     }
 }
