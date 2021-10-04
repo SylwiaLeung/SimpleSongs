@@ -1,6 +1,6 @@
-﻿using System;
-using SimpleSongs.DAO;
+﻿using SimpleSongs.DAO;
 using SimpleSongs.Models;
+using SimpleSongs.Views;
 
 namespace SimpleSongs.Controllers
 {
