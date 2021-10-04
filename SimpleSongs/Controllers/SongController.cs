@@ -16,11 +16,7 @@ namespace SimpleSongs.Controllers
 
         public Song GetSongByTitle(string title)
         {
-            if(string.IsNullOrEmpty(title))
-            {
-                throw new EmptyTitleException(title);
-            }
-            else return SongDao.Read(title);
+            return SongDao.Read(title);
         }
 
         public void AddNewSong(string title, string author, string album, double length)

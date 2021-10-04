@@ -1,4 +1,5 @@
 ﻿using SimpleSongs.Controllers;
+using SimpleSongs.Models;
 
 namespace SimpleSongs.Views
 {
@@ -38,6 +39,26 @@ namespace SimpleSongs.Views
                 }
                 else SongController.DeleteSong(songToDelete);
             }
+        }
+
+        public void DisplayAllSongs()
+        {
+            SongController.DisplaySongs();
+        }
+
+        public void DisplaySongsByTitles()
+        {
+            OutputUtils.DisplayMany(SongController.SortByTitles());
+        }
+
+        public void FindSongByTitle()
+        {
+            string title = InputUtils.GetUserStringInput("Please provide the title of the song you want to find: ");
+            if (string.IsNullOrEmpty(title))
+            {
+                throw new EmptyTitleException(title);
+            }
+            else SongController.GetSongByTitle(title);
         }
     }
 }
