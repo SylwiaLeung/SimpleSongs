@@ -40,6 +40,8 @@ namespace SimpleSongs.Views
         public static void DisplayWelcomeMessage()
         {
             Console.WriteLine("Welcome to the Simple Songs app! Enjoy the simplicity!");
+            Console.WriteLine("Press any key to proceed.");
+            Console.ReadKey();
         }
     }
 }
