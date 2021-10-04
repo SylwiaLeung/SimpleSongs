@@ -7,7 +7,7 @@ namespace SimpleSongs.DAO
         void Add(T instance);
         void Update(T instance);
         void Delete(T instance);
-        T Read(T instance);
+        T Read(string title);
         List<T> ReadAll();
         void Save();
     }

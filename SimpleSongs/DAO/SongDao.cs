@@ -25,9 +25,9 @@ namespace SimpleSongs.DAO
             DbContext.Songs.Remove(instance);
         }
 
-        public Song Read(Song instance)
+        public Song Read(string title)
         {
-            return DbContext.Songs.AsNoTracking().FirstOrDefault(song => song.Title == instance.Title);
+            return DbContext.Songs.AsNoTracking().FirstOrDefault(song => song.Title == title);
         }
 
         public List<Song> ReadAll()
