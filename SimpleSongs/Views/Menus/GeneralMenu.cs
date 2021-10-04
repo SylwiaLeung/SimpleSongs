@@ -13,7 +13,27 @@ namespace SimpleSongs.Views.Menus
             bool isRunning = true;
             while(isRunning)
             {
-
+                int option = InputUtils.GetUserIntInput();
+                switch (option)
+                {
+                    case 1:
+                        Game newGame = new Game();
+                        newGame.StartGame();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        //HighScore.DisplayScores();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        Printer.DisplayRules();
+                        break;
+                    case 0:
+                        running = false;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         

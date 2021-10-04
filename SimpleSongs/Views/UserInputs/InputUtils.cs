@@ -24,5 +24,16 @@ namespace SimpleSongs.Views
             int input = Int32.Parse(Console.ReadLine().Trim());
             return input;
         }
+
+        public static int GetUserOption(int min, int max)
+        {
+            int number;
+            while (!Int32.TryParse(Console.ReadLine(), out number) || number > max || number < min)
+            {
+                Console.WriteLine($"Number must be between {min} and {max}.");
+            }
+
+            return number;
+        }
     }
 }
