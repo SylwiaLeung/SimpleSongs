@@ -13,5 +13,10 @@ namespace SimpleSongs.Models
         public string AlbumName { get; set; }
         [Required]
         public double Length { get; set; }
+
+        public override string ToString()
+        {
+            return $"Title: {Title}, Author: {Author}, Album: {AlbumName}, Length: {Length}";
+        }
     }
 }
