@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace SimpleSongTest
+namespace SimpleSongsTest
 {
     [TestFixture]
     public class Tests
