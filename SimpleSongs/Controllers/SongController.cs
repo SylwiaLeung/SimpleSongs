@@ -1,4 +1,6 @@
-﻿using SimpleSongs.DAO;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SimpleSongs.DAO;
 using SimpleSongs.Models;
 using SimpleSongs.Views;
 
@@ -31,11 +33,24 @@ namespace SimpleSongs.Controllers
                 Length = length
             };
             SongDao.Add(song);
+            SongDao.Save();
         }
 
         public void DisplaySongs()
         {
             OutputUtils.DisplayMany(SongDao.ReadAll());
+        }
+
+        public List<Song> SortByTitles()
+        {
+            return SongDao.ReadAll().OrderByDescending(song => song.Title).ToList();
+        }
+
+        public void DeleteSong(string title)
+        {
+            var songToDelete = SongDao.Read(title);
+            SongDao.Delete(songToDelete);
+            SongDao.Save();
         }
     }
 }
