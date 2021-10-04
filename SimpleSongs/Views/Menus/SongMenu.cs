@@ -57,7 +57,7 @@ namespace SimpleSongs.Views
             string title = InputUtils.GetUserStringInput("Please provide the title of the song you want to find: ");
             if (string.IsNullOrEmpty(title))
             {
-                throw new EmptyTitleException(title);
+                throw new EmptyTitleException("Empty string provided");
             }
             else Console.WriteLine(SongController.GetSongByTitle(title).ToString());
         }

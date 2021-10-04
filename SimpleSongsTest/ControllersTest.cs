@@ -11,7 +11,7 @@ namespace SimpleSongsTest
     {
         SongController SongController { get; set; }
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             IDao<Song> FakeSongDao = new FakeSongDao();

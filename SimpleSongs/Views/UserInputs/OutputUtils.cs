@@ -36,5 +36,10 @@ namespace SimpleSongs.Views
             Console.WriteLine("Press any key to go back to the main menu.");
             Console.ReadKey();
         }
+
+        public static void DisplayWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to the Simple Songs app! Enjoy the simplicity!");
+        }
     }
 }

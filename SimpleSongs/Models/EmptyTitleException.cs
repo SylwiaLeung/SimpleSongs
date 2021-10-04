@@ -4,6 +4,6 @@ namespace SimpleSongs.Models
 {
     public class EmptyTitleException : Exception
     {
-        public EmptyTitleException(string title) : base(string.Format("Invalid Title", title)) { }
+        public EmptyTitleException(string message) : base(string.Format("Invalid Title", message)) { }
     }
 }

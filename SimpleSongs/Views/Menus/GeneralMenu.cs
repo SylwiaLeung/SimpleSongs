@@ -1,5 +1,4 @@
-﻿using System;
-using SimpleSongs.Controllers;
+﻿using SimpleSongs.Controllers;
 using SimpleSongs.DAO;
 
 namespace SimpleSongs.Views.Menus
@@ -8,6 +7,7 @@ namespace SimpleSongs.Views.Menus
     {
         public static void RunMainMenu()
         {
+            OutputUtils.DisplayWelcomeMessage();
             SongMenu songMenu = new(new SongController(new SongDao()));
             bool isRunning = true;
             while(isRunning)
