@@ -1,4 +1,5 @@
-﻿using SimpleSongs.Controllers;
+﻿using System;
+using SimpleSongs.Controllers;
 using SimpleSongs.Models;
 
 namespace SimpleSongs.Views
@@ -58,7 +59,7 @@ namespace SimpleSongs.Views
             {
                 throw new EmptyTitleException(title);
             }
-            else SongController.GetSongByTitle(title);
+            else Console.WriteLine(SongController.GetSongByTitle(title).ToString());
         }
     }
 }

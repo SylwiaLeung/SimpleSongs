@@ -1,6 +1,4 @@
-﻿using System;
-using SimpleSongs.Controllers;
-using SimpleSongs.DAO;
+﻿using SimpleSongs.Views.Menus;
 
 namespace SimpleSongs
 {
@@ -8,8 +6,7 @@ namespace SimpleSongs
     {
         static void Main(string[] args)
         {
-            SongController songController = new(new SongDao());
-            songController.DisplaySongs();
+            GeneralMenu.RunMainMenu();
         }
     }
 }

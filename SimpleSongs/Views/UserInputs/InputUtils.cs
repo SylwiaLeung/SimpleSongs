@@ -14,7 +14,7 @@ namespace SimpleSongs.Views
         public static double GetUserDoubleInput(string message)
         {
             Console.WriteLine(message);
-            double input = Double.Parse(Console.ReadLine().Trim());
+            double input = Convert.ToDouble(Console.ReadLine().Trim());
             return input;
         }
 
@@ -27,6 +27,7 @@ namespace SimpleSongs.Views
 
         public static int GetUserOption(int min, int max)
         {
+            Console.WriteLine($"Please choose an option between {min} and {max}.");
             int number;
             while (!Int32.TryParse(Console.ReadLine(), out number) || number > max || number < min)
             {

@@ -1,35 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SimpleSongs.Controllers;
+using SimpleSongs.DAO;
 
 namespace SimpleSongs.Views.Menus
 {
-    public class GeneralMenu
+    public static class GeneralMenu
     {
-        public void RunMainMenu()
+        public static void RunMainMenu()
         {
+            SongMenu songMenu = new(new SongController(new SongDao()));
             bool isRunning = true;
             while(isRunning)
             {
-                int option = InputUtils.GetUserIntInput();
+                OutputUtils.DisplayMenuOptions();
+                int option = InputUtils.GetUserOption(0, 5);
                 switch (option)
                 {
                     case 1:
-                        Game newGame = new Game();
-                        newGame.StartGame();
+                        songMenu.DisplayAllSongs();
+                        OutputUtils.GoBackToMainMenu();
                         break;
                     case 2:
-                        Console.Clear();
-                        //HighScore.DisplayScores();
+                        songMenu.DisplaySongsByTitles();
+                        OutputUtils.GoBackToMainMenu();
                         break;
                     case 3:
-                        Console.Clear();
-                        Printer.DisplayRules();
+                        songMenu.DeleteSong();
+                        OutputUtils.GoBackToMainMenu();
+                        break;
+                    case 4:
+                        songMenu.FindSongByTitle();
+                        OutputUtils.GoBackToMainMenu();
+                        break;
+                    case 5:
+                        songMenu.AddNewSong();
+                        OutputUtils.GoBackToMainMenu();
                         break;
                     case 0:
-                        running = false;
+                        isRunning = false;
                         break;
                     default:
                         break;
