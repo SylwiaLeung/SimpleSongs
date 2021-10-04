@@ -1,47 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SimpleSongs.DAL;
 using SimpleSongs.Models;
 
 namespace SimpleSongs.DAO
 {
     public class SongDao : IDao<Song>
     {
-        private readonly DbContext dbContext { get; set; }
+        private Context DbContext { get; set; }
 
         public SongDao()
         {
-            dbContext = new();
+            DbContext = new();
         }
 
         public void Add(Song instance)
         {
-            dbContext.Songs.Attach(instance);
+            DbContext.Songs.Attach(instance);
         }
 
         public void Delete(Song instance)
         {
-            dbContext.Songs.Remove(instance);
+            DbContext.Songs.Remove(instance);
         }
 
         public Song Read(Song instance)
         {
-            return dbContext.Songs.AsNoTracking().FirstOrDefault(song => song.Title == instance.Title);
+            return DbContext.Songs.AsNoTracking().FirstOrDefault(song => song.Title == instance.Title);
         }
 
         public List<Song> ReadAll()
         {
-            return dbContext.Songs.AsNoTracking().ToList();
+            return DbContext.Songs.AsNoTracking().ToList();
         }
 
         public void Save()
         {
-            dbContext.SaveChanges();
+            DbContext.SaveChanges();
         }
 
         public void Update(Song instance)
         {
-            dbContext.Songs.Update(instance);
+            DbContext.Songs.Update(instance);
         }
     }
 }
