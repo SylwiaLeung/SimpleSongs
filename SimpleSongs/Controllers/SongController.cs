@@ -46,9 +46,8 @@ namespace SimpleSongs.Controllers
             return SongDao.ReadAll().OrderByDescending(song => song.Title).ToList();
         }
 
-        public void DeleteSong(string title)
+        public void DeleteSong(Song songToDelete)
         {
-            var songToDelete = SongDao.Read(title);
             SongDao.Delete(songToDelete);
             SongDao.Save();
         }

@@ -13,5 +13,10 @@ namespace SimpleSongs.Views
                 Console.WriteLine(instance.ToString());
             }
         }
+
+        public static void DisplayMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }
