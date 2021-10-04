@@ -59,5 +59,7 @@ namespace SimpleSongs.DAL
                     Length = 5.20
                 },
             };
+            builder.Entity<Song>().HasData(Songs);
         }
+    }
 }

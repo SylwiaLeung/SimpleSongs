@@ -22,7 +22,7 @@ namespace SimpleSongs.DAL
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.See
+            builder.SeedDatabase();
         }
     }
 }
